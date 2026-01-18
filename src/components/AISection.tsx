@@ -30,7 +30,7 @@ export default function AISection() {
             <p className="text-lg sm:text-xl text-blanco/80 leading-relaxed">
               Utilizamos inteligencia artificial para detectar patrones,
               inconsistencias y oportunidades a partir de la información de tu
-              establecimiento. GEMSA transforma ese análisis en un plan de
+              establecimiento. GESGA transforma ese análisis en un plan de
               acción entendible y ejecutable.
             </p>
           </motion.div>

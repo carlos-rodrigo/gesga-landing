@@ -12,10 +12,10 @@ import Footer from "@/components/Footer";
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "GEMSA",
+  name: "GESGA",
   description:
     "Diagnóstico ganadero y plan de mejoras impulsado por inteligencia artificial para establecimientos en Argentina.",
-  url: "https://gemsa.com.ar",
+  url: "https://gesga.com.ar",
   areaServed: {
     "@type": "Country",
     name: "Argentina",

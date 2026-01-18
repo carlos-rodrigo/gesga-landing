@@ -65,7 +65,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-grafito/80 max-w-3xl mx-auto leading-relaxed"
         >
-          GEMSA evalúa el desempeño productivo y de manejo de tu
+          GESGA evalúa el desempeño productivo y de manejo de tu
           establecimiento, detecta oportunidades y entrega un plan priorizado
           para mejorar resultados.
         </motion.p>

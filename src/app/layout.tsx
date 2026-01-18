@@ -15,9 +15,9 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "GEMSA | Diagnóstico ganadero impulsado por IA",
+  title: "GESGA | Diagnóstico ganadero impulsado por IA",
   description:
-    "GEMSA evalúa el desempeño productivo y de manejo de tu establecimiento ganadero, detecta oportunidades y entrega un plan priorizado para mejorar resultados.",
+    "GESGA evalúa el desempeño productivo y de manejo de tu establecimiento ganadero, detecta oportunidades y entrega un plan priorizado para mejorar resultados.",
   keywords: [
     "diagnóstico ganadero",
     "mejora productiva",
@@ -30,24 +30,24 @@ export const metadata: Metadata = {
     "eficiencia reproductiva",
     "plan de mejoras",
   ],
-  authors: [{ name: "GEMSA" }],
-  creator: "GEMSA",
-  metadataBase: new URL("https://gemsa.com.ar"),
+  authors: [{ name: "GESGA" }],
+  creator: "GESGA",
+  metadataBase: new URL("https://gesga.com.ar"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "GEMSA | Diagnóstico ganadero impulsado por IA",
+    title: "GESGA | Diagnóstico ganadero impulsado por IA",
     description:
       "Evaluamos tu establecimiento ganadero y entregamos un plan de mejoras priorizado para aumentar rentabilidad.",
-    url: "https://gemsa.com.ar",
-    siteName: "GEMSA",
+    url: "https://gesga.com.ar",
+    siteName: "GESGA",
     locale: "es_AR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GEMSA | Diagnóstico ganadero impulsado por IA",
+    title: "GESGA | Diagnóstico ganadero impulsado por IA",
     description:
       "Evaluamos tu establecimiento ganadero y entregamos un plan de mejoras priorizado.",
   },

@@ -24,7 +24,7 @@ export default function Footer() {
             href="#"
             className="font-[var(--font-manrope)] text-3xl sm:text-4xl font-bold text-blanco tracking-tight mb-3"
           >
-            GEMSA
+            GESGA
           </a>
           <p className="text-blanco/70 text-lg mb-2">
             Diagnóstico ganadero impulsado por IA
@@ -32,7 +32,7 @@ export default function Footer() {
           <p className="text-blanco/50 text-sm mb-6">Argentina</p>
           <div className="w-16 h-px bg-blanco/20 mb-6" />
           <p className="text-blanco/40 text-sm">
-            © 2024 GEMSA. Todos los derechos reservados.
+            © 2024 GESGA. Todos los derechos reservados.
           </p>
         </motion.div>
       </div>

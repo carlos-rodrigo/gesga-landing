@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: "https://gemsa.com.ar",
+      url: "https://gesga.com.ar",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
