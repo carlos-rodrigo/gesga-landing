@@ -84,7 +84,7 @@ export default function Hero() {
             Conversar sobre el diagnóstico de mi campo
           </a>
           <a
-            href="#como-funciona"
+            href="#que-entregamos"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-verde-profundo border-2 border-verde-profundo/20 rounded-full hover:border-verde-profundo/40 hover:bg-verde-profundo/5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-profundo focus-visible:ring-offset-2"
           >
             Ver qué incluye

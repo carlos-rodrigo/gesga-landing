@@ -18,7 +18,7 @@ export default function Deliverables() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 sm:py-28 bg-arena relative overflow-hidden">
+    <section id="que-entregamos" className="py-20 sm:py-28 bg-arena relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-verde-profundo/10 to-transparent" />
       </div>
