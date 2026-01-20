@@ -2,33 +2,38 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Target, Scale, Coins, HeartPulse, Leaf } from "lucide-react";
+import { Target, Coins, Settings } from "lucide-react";
 
-const kpis = [
+const categories = [
   {
     icon: Target,
-    title: "Eficiencia reproductiva",
-    subtitle: "(preñez / destete)",
-  },
-  {
-    icon: Scale,
-    title: "Productividad",
-    subtitle: "(kg/ha/año)",
+    title: "Indicadores técnicos",
+    items: [
+      "eficiencia reproductiva y productiva,",
+      "productividad por hectárea,",
+      "carga animal y uso del recurso forrajero,",
+      "pérdidas, mermas y manejo.",
+    ],
   },
   {
     icon: Coins,
-    title: "Costo por kg producido",
-    subtitle: null,
+    title: "Indicadores económicos",
+    items: [
+      "márgenes brutos por actividad,",
+      "estructura de costos directos y totales,",
+      "resultado global de la empresa,",
+      "rentabilidad del capital invertido.",
+    ],
   },
   {
-    icon: HeartPulse,
-    title: "Mermas y mortandad",
-    subtitle: null,
-  },
-  {
-    icon: Leaf,
-    title: "Eficiencia forrajera",
-    subtitle: null,
+    icon: Settings,
+    title: "Sistema y contexto",
+    items: [
+      "coherencia técnica-económica del planteo productivo,",
+      "restricciones estructurales del sistema,",
+      "impacto del ambiente y del clima,",
+      "escenarios de mejora posibles.",
+    ],
   },
 ];
 
@@ -45,38 +50,41 @@ export default function KPIs() {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="font-[var(--font-manrope)] text-3xl sm:text-4xl md:text-5xl font-bold text-verde-profundo mb-4">
-            Indicadores que buscamos optimizar
+          <h2 className="font-[var(--font-manrope)] text-3xl sm:text-4xl md:text-5xl font-bold text-verde-profundo">
+            Qué analizamos
           </h2>
-          <p className="text-lg sm:text-xl text-grafito/70">
-            Según el sistema productivo de tu establecimiento
-          </p>
         </motion.div>
 
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
-          {kpis.map((kpi, index) => {
-            const Icon = kpi.icon;
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+          {categories.map((category, index) => {
+            const Icon = category.icon;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.08 }}
-                className="group flex items-center gap-3 sm:gap-4 px-5 sm:px-6 py-3 sm:py-4 bg-arena rounded-full border border-verde-profundo/10 hover:border-verde-acento/30 hover:bg-verde-acento/5 transition-all duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="group bg-arena rounded-2xl p-6 sm:p-8 border border-verde-profundo/5 hover:shadow-lg hover:border-verde-acento/20 transition-all duration-300"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-verde-acento/10 group-hover:bg-verde-acento/20 transition-colors duration-300">
-                  <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-verde-acento" />
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-verde-acento/10 group-hover:bg-verde-acento/20 transition-colors duration-300">
+                    <Icon className="w-6 h-6 text-verde-acento" />
+                  </div>
+                  <h3 className="font-[var(--font-manrope)] text-xl sm:text-2xl font-semibold text-verde-profundo">
+                    {category.title}
+                  </h3>
                 </div>
-                <div>
-                  <span className="font-medium text-verde-profundo text-sm sm:text-base">
-                    {kpi.title}
-                  </span>
-                  {kpi.subtitle && (
-                    <span className="text-grafito/50 text-sm ml-1">
-                      {kpi.subtitle}
-                    </span>
-                  )}
-                </div>
+                <ul className="space-y-3">
+                  {category.items.map((item, itemIndex) => (
+                    <li
+                      key={itemIndex}
+                      className="flex items-start gap-3 text-grafito/80"
+                    >
+                      <span className="text-verde-acento mt-1">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             );
           })}

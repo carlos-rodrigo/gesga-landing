@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
 const trustBullets = [
-  "Para dueños y administradores",
-  "Enfoque práctico y accionable",
-  "Plan 30/60/90 días",
+  "Pensado para productores de escala comercial",
+  "Enfoque técnico-económico integrado",
+  "Planes de mejora de mediano y largo plazo",
 ];
 
 const fadeInUp = {
@@ -51,9 +51,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-[var(--font-manrope)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-verde-profundo leading-[1.1] tracking-tight"
         >
-          Diagnóstico ganadero y plan de mejoras{" "}
+          Entendé cómo funciona tu sistema productivo.{" "}
           <span className="relative inline-block">
-            impulsado por IA
+            Mejorá donde realmente importa.
             <span className="absolute -bottom-1 left-0 right-0 h-3 bg-verde-acento/20 -rotate-1" />
           </span>
         </motion.h1>
@@ -65,9 +65,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-6 sm:mt-8 text-lg sm:text-xl md:text-2xl text-grafito/80 max-w-3xl mx-auto leading-relaxed"
         >
-          GESGA evalúa el desempeño productivo y de manejo de tu
-          establecimiento, detecta oportunidades y entrega un plan priorizado
-          para mejorar resultados.
+          GESGA realiza diagnósticos técnico-económicos integrales que combinan
+          producción, costos, márgenes y capital para detectar restricciones,
+          oportunidades y caminos de mejora con impacto medible.
         </motion.p>
 
         <motion.div
@@ -81,7 +81,7 @@ export default function Hero() {
             href="#contacto"
             className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blanco bg-verde-acento rounded-full hover:bg-verde-profundo transition-all duration-200 shadow-lg shadow-verde-acento/25 hover:shadow-verde-profundo/25 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-acento focus-visible:ring-offset-2"
           >
-            Solicitar demo
+            Conversar sobre el diagnóstico de mi campo
           </a>
           <a
             href="#como-funciona"

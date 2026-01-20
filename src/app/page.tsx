@@ -1,11 +1,11 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import WhatIsGesga from "@/components/WhatIsGesga";
 import Problems from "@/components/Problems";
-import HowItWorks from "@/components/HowItWorks";
 import KPIs from "@/components/KPIs";
 import Deliverables from "@/components/Deliverables";
 import AISection from "@/components/AISection";
-import FAQ from "@/components/FAQ";
+import QuienesSomos from "@/components/QuienesSomos";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 
@@ -14,23 +14,23 @@ const jsonLd = {
   "@type": "ProfessionalService",
   name: "GESGA",
   description:
-    "Diagnóstico ganadero y plan de mejoras impulsado por inteligencia artificial para establecimientos en Argentina.",
+    "Diagnóstico técnico-económico integral para establecimientos agropecuarios de escala comercial en Argentina.",
   url: "https://gesga.com.ar",
   areaServed: {
     "@type": "Country",
     name: "Argentina",
   },
   serviceType: [
-    "Diagnóstico ganadero",
+    "Diagnóstico técnico-económico",
     "Consultoría agropecuaria",
-    "Análisis productivo",
+    "Análisis productivo y económico",
     "Plan de mejoras",
   ],
   knowsAbout: [
     "Ganadería",
-    "Eficiencia reproductiva",
-    "Productividad ganadera",
-    "Inteligencia artificial aplicada al agro",
+    "Agricultura",
+    "Eficiencia productiva",
+    "Análisis económico agropecuario",
   ],
 };
 
@@ -44,12 +44,12 @@ export default function Home() {
       <main className="min-h-screen">
         <Navbar />
         <Hero />
+        <WhatIsGesga />
         <Problems />
-        <HowItWorks />
         <KPIs />
         <Deliverables />
         <AISection />
-        <FAQ />
+        <QuienesSomos />
         <ContactForm />
         <Footer />
       </main>

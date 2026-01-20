@@ -5,10 +5,12 @@ import { useRef } from "react";
 import { CheckCircle2 } from "lucide-react";
 
 const deliverables = [
-  "Informe de diagnóstico con hallazgos y prioridades",
-  "Score de desempeño para medir evolución",
-  "Plan 30/60/90 días con acciones específicas",
-  "Recomendaciones de mejora en manejo, sanidad y alimentación",
+  "Dashboard de KPIs técnicos y económicos del establecimiento.",
+  "Márgenes por actividad (cría, recría, engorde, agricultura).",
+  "Resultado global de la empresa y análisis de rentabilidad del capital.",
+  "Diagnóstico integrado del funcionamiento del sistema.",
+  "Plan de mejoras personalizado, diseñado en función de los objetivos, prioridades y ambiciones del productor, reconociendo que cada establecimiento es un sistema único.",
+  "Escenarios de mejora productiva y económica, con evaluación de impacto, riesgos y retornos esperados.",
 ];
 
 export default function Deliverables() {
@@ -29,11 +31,11 @@ export default function Deliverables() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="font-[var(--font-manrope)] text-3xl sm:text-4xl md:text-5xl font-bold text-verde-profundo">
-            Entregables claros. Acciones concretas.
+            Qué entregamos
           </h2>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-10">
           {deliverables.map((item, index) => (
             <motion.div
               key={index}
@@ -45,12 +47,20 @@ export default function Deliverables() {
               <div className="flex-shrink-0 w-6 h-6 mt-0.5">
                 <CheckCircle2 className="w-6 h-6 text-verde-acento" />
               </div>
-              <p className="text-grafito font-medium leading-relaxed">
-                {item}
-              </p>
+              <p className="text-grafito leading-relaxed">{item}</p>
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center text-lg sm:text-xl text-verde-profundo font-medium"
+        >
+          No trabajamos con recomendaciones genéricas: las propuestas se
+          construyen a medida de cada campo y de cada proyecto productivo.
+        </motion.p>
       </div>
     </section>
   );

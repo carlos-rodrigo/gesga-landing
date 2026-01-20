@@ -40,10 +40,12 @@ export default function ContactForm() {
           className="text-center mb-10 sm:mb-12"
         >
           <h2 className="font-[var(--font-manrope)] text-3xl sm:text-4xl md:text-5xl font-bold text-verde-profundo mb-4">
-            Solicitá una demo y te mostramos cómo funciona
+            Tomar buenas decisiones requiere entender el sistema completo.
           </h2>
           <p className="text-lg sm:text-xl text-grafito/70">
-            Completá el formulario y nos ponemos en contacto.
+            GESGA te ayuda a ordenar la información, interpretar los resultados
+            y decidir con criterio técnico y económico, alineado con los
+            objetivos de tu empresa.
           </p>
         </motion.div>
 
@@ -166,7 +168,7 @@ export default function ContactForm() {
               className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-blanco bg-verde-acento rounded-xl hover:bg-verde-profundo transition-all duration-200 shadow-lg shadow-verde-acento/25 hover:shadow-verde-profundo/25 focus:outline-none focus-visible:ring-2 focus-visible:ring-verde-acento focus-visible:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               <Send className="w-5 h-5" />
-              Enviar solicitud
+              Conversar sobre el diagnóstico de mi campo
             </button>
           </div>
         </motion.form>
