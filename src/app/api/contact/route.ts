@@ -11,16 +11,25 @@ export async function POST(request: Request) {
       );
     }
 
+    const accessKey = process.env.WEB3FORMS_KEY;
+    
+    if (!accessKey) {
+      console.error("WEB3FORMS_KEY not configured");
+      return NextResponse.json(
+        { error: "Configuración de email incompleta" },
+        { status: 500 }
+      );
+    }
+
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        access_key: process.env.WEB3FORMS_KEY,
+        access_key: accessKey,
         subject: `Nuevo contacto GESGA: ${nombre}`,
         from_name: "GESGA Landing",
-        to: "juanfroment@gmail.com",
         nombre,
         rol: rol || "No especificado",
         provincia: provincia || "No especificada",
@@ -29,12 +38,24 @@ export async function POST(request: Request) {
       }),
     });
 
-    const data = await response.json();
+    const text = await response.text();
+    console.log("Web3Forms response:", text);
+    
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      console.error("Invalid JSON response:", text.substring(0, 200));
+      return NextResponse.json(
+        { error: "Error en el servicio de email" },
+        { status: 500 }
+      );
+    }
 
     if (!data.success) {
       console.error("Web3Forms error:", data);
       return NextResponse.json(
-        { error: "Error al enviar el email" },
+        { error: data.message || "Error al enviar el email" },
         { status: 500 }
       );
     }
