@@ -8,6 +8,8 @@ const roles = ["Dueño", "Administrador", "Asesor", "Otro"];
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
+
 export default function ContactForm() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -35,15 +37,25 @@ export default function ContactForm() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Nuevo contacto GESGA: ${formData.nombre}`,
+          from_name: "GESGA Landing",
+          nombre: formData.nombre,
+          rol: formData.rol || "No especificado",
+          provincia: formData.provincia || "No especificada",
+          whatsapp: formData.whatsapp || "No proporcionado",
+          mensaje: formData.mensaje || "Sin mensaje adicional",
+        }),
       });
 
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data.error || "Error al enviar el formulario");
+      const data = await response.json();
+
+      if (!data.success) {
+        throw new Error(data.message || "Error al enviar el formulario");
       }
 
       setStatus("success");
