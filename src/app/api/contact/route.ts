@@ -11,43 +11,35 @@ export async function POST(request: Request) {
       );
     }
 
-    const emailContent = `
-Nuevo contacto desde GESGA Landing
-
-Nombre: ${nombre}
-Rol: ${rol || "No especificado"}
-Provincia: ${provincia || "No especificada"}
-WhatsApp: ${whatsapp || "No proporcionado"}
-
-Mensaje:
-${mensaje || "Sin mensaje adicional"}
-    `.trim();
-
-    const response = await fetch("https://api.resend.com/emails", {
+    const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "GESGA <onboarding@resend.dev>",
-        to: ["juanfroment@gmail.com"],
-        subject: `Nuevo contacto: ${nombre}`,
-        text: emailContent,
+        access_key: process.env.WEB3FORMS_KEY,
+        subject: `Nuevo contacto GESGA: ${nombre}`,
+        from_name: "GESGA Landing",
+        to: "juanfroment@gmail.com",
+        nombre,
+        rol: rol || "No especificado",
+        provincia: provincia || "No especificada",
+        whatsapp: whatsapp || "No proporcionado",
+        mensaje: mensaje || "Sin mensaje adicional",
       }),
     });
 
-    if (!response.ok) {
-      const error = await response.json();
-      console.error("Resend error:", error);
+    const data = await response.json();
+
+    if (!data.success) {
+      console.error("Web3Forms error:", data);
       return NextResponse.json(
         { error: "Error al enviar el email" },
         { status: 500 }
       );
     }
 
-    const data = await response.json();
-    return NextResponse.json({ success: true, id: data.id });
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error("API error:", error);
     return NextResponse.json(
