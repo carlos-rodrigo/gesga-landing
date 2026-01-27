@@ -30,7 +30,7 @@ ${mensaje || "Sin mensaje adicional"}
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: "GESGA <contacto@gesga.com.ar>",
+        from: "GESGA <onboarding@resend.dev>",
         to: ["juanfroment@gmail.com"],
         subject: `Nuevo contacto: ${nombre}`,
         text: emailContent,
